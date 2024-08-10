@@ -1,0 +1,57 @@
+<div class="container">
+    <h2>Flight Booking Form</h2>
+    <form>
+        <div class="form-group">
+            <label for="flightNo">Flight No</label>
+            <input type="text" id="flightNo" [(ngModel)]="flightNo" name="flightNo" placeholder="Enter Flight No" required>
+        </div>
+
+        <div class="form-group">
+            <label for="flightNo">Flight Id</label>
+            <input type="number" id="flightNo" [(ngModel)]="flightId" name="flightId" placeholder="Enter Flight Id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="scheduleDate">Schedule Date</label>
+            <input type="date" id="scheduleDate" [(ngModel)]="flightDate" name="scheduleDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="departureTime">Departure Time</label>
+            <input type="time" id="departureTime" [(ngModel)]="flightDTime" name="departureTime" required>
+        </div>
+
+        <div class="form-group">
+            <label for="arrivalTime">Arrival Time</label>
+            <input type="time" id="arrivalTime" [(ngModel)]="flightATime" name="arrivalTime" required>
+        </div>
+
+        <div class="form-group">
+            <label for="departureAirport">Departure Airport</label>
+            <select id="arrival" [(ngModel)]="departure" name="departure" required >
+                <option value="" disabled selected>Select Arrival City</option>
+                <option [value]="data.airportId" *ngFor="let data of airPortList; let i = index">{{data.airportName}},{{data.cityName}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="arrivalAirport">Arrival Airport</label>
+            <select id="arrival" [(ngModel)]="arrival" name="arrival" required >
+                <option value="" disabled selected>Select Arrival City</option>
+                <option [value]="data.airportId" *ngFor="let data of airPortList; let i = index">{{data.airportName}},{{data.cityName}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="seats">Seats</label>
+            <input type="number" id="seats" name="seats" [(ngModel)]="flightSeats" min="1" placeholder="Enter Number of Seats" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" min="0" [(ngModel)]="flightPrice" placeholder="Enter Price" required>
+        </div>
+
+        <button type="submit" (click)="saveAll()">Book Flight</button>
+    </form>
+</div>

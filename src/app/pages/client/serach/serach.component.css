@@ -1,0 +1,94 @@
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.search-panel {
+    width: 30%;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.search-panel h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.search-panel label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.search-panel input,
+.search-panel select,
+.search-panel button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search-panel input {
+    margin-bottom: 20px;
+}
+
+.search-panel button {
+    background-color: #0056b3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-panel button:hover {
+    background-color: #004494;
+}
+
+.results-panel {
+    width: 70%;
+    padding: 20px;
+}
+
+.results-panel h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .search-panel, .results-panel {
+        width: 100%;
+    }
+}

@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="search-panel">
+        <h2>Search Flights</h2>
+        <form>
+            <label for="departure">Departure</label>
+                <select id="departure" [(ngModel)]="departure" name="departure" required>
+                    <option value="" disabled selected>Select Departure City</option>
+                    <option [value]="data.airportId" *ngFor="let data of allAirport; let i = index">{{data.airportName}},{{data.cityName}}</option>
+                </select>
+            <label for="arrival">Arrival</label>
+            <select id="arrival" [(ngModel)]="arrival" name="arrival" required >
+                <option value="" disabled selected>Select Arrival City</option>
+                <option [value]="data.airportId" *ngFor="let data of allAirport; let i = index">{{data.airportName}},{{data.cityName}}</option>
+            </select>
+            <label for="date">Date</label>
+            <input type="date" id="date-time" [(ngModel)]="date" name="date" required>
+
+            <label for="passengers">No. of Passengers</label>
+            <input type="number" [(ngModel)]="passenger" id="passengers" name="passengers" min="1" value="1" required>
+
+            <button type="submit" (click)="searchFlights()">Search</button>
+        </form>
+    </div>
+    <div class="results-panel">
+        <h2>Available Flights</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Flight A123</td>
+                    <td>08:00 AM</td>
+                    <td>10:00 AM</td>
+                    <td>2h 00m</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <td>Flight B456</td>
+                    <td>12:00 PM</td>
+                    <td>02:30 PM</td>
+                    <td>2h 30m</td>
+                    <td>$250</td>
+                </tr>
+                <!-- Additional rows can be added here -->
+            </tbody>
+        </table>
+    </div>
+</div>
